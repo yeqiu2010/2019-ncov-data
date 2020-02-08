@@ -4,7 +4,13 @@
 
 ## 项目效果图
 
-![1581177059449](C:\Users\Friday\AppData\Roaming\Typora\typora-user-images\1581177059449.png)
+![主页](F:\Desktop\2019-ncov-data\static\img\home.png)
+
+​												主页图片
+
+![home1](F:\Desktop\2019-ncov-data\static\img\home1.jpg)
+
+​												主页图片1
 
 ## 前端技术栈
 
