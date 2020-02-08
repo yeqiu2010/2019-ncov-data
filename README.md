@@ -8,7 +8,7 @@
 
 ​												主页图片
 
-![home1](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/home.png)
+![home1](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/home1.png)
 
 ​												主页图片1
 
