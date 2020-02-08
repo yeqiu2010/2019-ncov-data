@@ -2,6 +2,24 @@
 
 > A Vue.js project for 2019 wuhan ncov
 
+## 项目效果图
+
+![1581177059449](C:\Users\Friday\AppData\Roaming\Typora\typora-user-images\1581177059449.png)
+
+## 前端技术栈
+
+前端主要采用了：
+
+1.Vue
+2.axios
+3.ElementUI
+4.echarts
+5.vue-router
+
+## 数据来源
+
+数据来源于[丁香园](<https://ncov.dxy.cn/ncovh5/view/pneumonia?from=singlemessage&isappinstalled=0>)
+
 ## Build Setup
 
 ``` bash
