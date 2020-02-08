@@ -4,11 +4,11 @@
 
 ## 项目效果图
 
-![主页](F:\Desktop\2019-ncov-data\static\img\home.png)
+![home](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/home.png)
 
 ​												主页图片
 
-![home1](F:\Desktop\2019-ncov-data\static\img\home1.jpg)
+![home1](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/home.png)
 
 ​												主页图片1
 
@@ -16,11 +16,12 @@
 
 前端主要采用了：
 
-1.Vue
-2.axios
-3.ElementUI
-4.echarts
-5.vue-router
+1. Vue
+2. axios
+3. ElementUI
+4. echarts
+5. vue-router
+6. vuex
 
 ## 数据来源
 
