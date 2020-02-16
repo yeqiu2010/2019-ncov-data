@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div style="border-bottom: 1px solid silver;margin: 0 5px;height: 200px">
+  <div class="home-container">
+    <div style="border-bottom: 1px solid silver;margin: 0 5px;">
       <p style="text-align: left">截至 {{statisticUpdateTime}} 全国数据统计</p>
       <el-row type="flex" justify="center">
         <template v-for="item in changeStatisticDatas">
@@ -10,7 +10,11 @@
         </template>
       </el-row>
     </div>
-    <div id="china_map" style='height:400px;'></div>
+    <el-row type="flex" justify="center">
+      <el-col :span="24">
+        <div id="china_map" style='height:400px;'></div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -33,6 +37,13 @@
     },
     mounted() {
       this.chinaChart = echarts.init(document.getElementById('china_map'));
+
+      // 在屏幕旋转时能自动调整尺寸
+      let _this = this;
+      window.onresize = function(){
+        _this.chinaChart.resize();
+      };
+
       // 进行相关配置
       this.chartOption = {
         tooltip: { // 鼠标移到图里面的浮动提示框
@@ -64,27 +75,28 @@
           // backgroundColor:"#ff7f50",//提示标签背景颜色
           // textStyle:{color:"#fff"} //提示标签字体颜色
         },
-        // visualMap的详细配置解析：https://echarts.baidu.com/option.html#visualMap
         visualMap: { // 左下角的颜色区域
           type: 'piecewise', // 定义为分段型 visualMap
           min: 0,
           max: 1000,
-          itemWidth: 40,
-          bottom: 60,
-          left: 20,
-          pieces: [ // 自定义『分段式视觉映射组件（visualMapPiecewise）』的每一段的范围，以及每一段的文字，以及每一段的特别的样式
-            {gt: 10000, label: '>10000', color: '#4f070d'},
-            {gt: 1000, lte: 10000, label: '1000-10000', color: '#811c24'},
-            {gt: 500, lte: 999, label: '500-999', color: '#cb2a2f'},
-            {gt: 100, lte: 499, label: '100-499', color: '#e55a4e'},
-            {gt: 10, lte: 99, label: '10-99', color: '#f59e83'},
-            {gt: 0, lte: 9, label: '0-9', color: '#fdebcf'}
+          itemWidth: 8,
+          itemHeight: 8,
+          bottom: 10,
+          orient: 'vertical',
+          pieces: [
+            {gte: 10000, label: '>10000', color: '#4f070d'},
+            {gte: 1000, lte: 9999, label: '1000-9999', color: '#811c24'},
+            {gte: 500, lte: 999, label: '500-999', color: '#cb2a2f'},
+            {gte: 100, lte: 499, label: '100-499', color: '#e55a4e'},
+            {gte: 10, lte: 99, label: '10-99', color: '#f59e83'},
+            {gte: 1, lte: 9, label: '1-9', color: '#fdebcf'},
+            {value: 0, label: '0', color: '#fff'}
           ]
         },
         // geo配置详解： https://echarts.baidu.com/option.html#geo
         geo: { // 地理坐标系组件用于地图的绘制
           map: 'china', // 表示中国地图
-          roam: true, // 是否开启鼠标缩放和平移漫游
+          roam: false, // 是否开启鼠标缩放和平移漫游
           zoom: 1.2, // 当前视角的缩放比例（地图的放大比例）
           label: {
             show: true
@@ -180,5 +192,6 @@
 </script>
 
 <style scoped>
-
+ .home-container{
+ }
 </style>
