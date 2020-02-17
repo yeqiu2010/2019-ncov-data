@@ -10,11 +10,42 @@
         </template>
       </el-row>
     </div>
+    <!-- 中国疫情地图 -->
     <el-row type="flex" justify="center">
       <el-col :span="24">
         <div id="china_map" style='height:400px;'></div>
       </el-col>
     </el-row>
+    <!-- 中国疫情数据 -->
+    <el-table
+      :data="dxyAreaData"
+      :header-cell-style="{background:'#eef1f6',color:'#606266'}"
+      style="width: 100%;margin-bottom: 20px;font-size: 1rem;"
+      row-key="id"
+      border
+      stripe
+      :tree-props="{children: 'cities'}">
+      <el-table-column
+        prop="name"
+        label="地区">
+      </el-table-column>
+      <el-table-column
+        prop="currentConfirmedCount"
+        label="现存确诊">
+      </el-table-column>
+      <el-table-column
+        prop="confirmedCount"
+        label="累计确诊">
+      </el-table-column>
+      <el-table-column
+        prop="deadCount"
+        label="死亡">
+      </el-table-column>
+      <el-table-column
+        prop="curedCount"
+        label="治愈">
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
@@ -40,7 +71,7 @@
 
       // 在屏幕旋转时能自动调整尺寸
       let _this = this;
-      window.onresize = function(){
+      window.onresize = function () {
         _this.chinaChart.resize();
       };
 
@@ -93,7 +124,6 @@
             {value: 0, label: '0', color: '#fff'}
           ]
         },
-        // geo配置详解： https://echarts.baidu.com/option.html#geo
         geo: { // 地理坐标系组件用于地图的绘制
           map: 'china', // 表示中国地图
           roam: false, // 是否开启鼠标缩放和平移漫游
@@ -192,6 +222,6 @@
 </script>
 
 <style scoped>
- .home-container{
- }
+  .home-container {
+  }
 </style>
