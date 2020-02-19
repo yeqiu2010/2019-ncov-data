@@ -2,6 +2,8 @@ import {SET_DXYSTATISTICDATA, SET_DXYAREADATA} from './mutation-types';
 import {getNcovDataFromDXY} from '../service/getNcovDate';
 
 export default {
+
+  // 从丁香园中获取疫情数据，并写入到vuex中
   async getNcovDataFromDXY({commit, state}) {
     let resp = await getNcovDataFromDXY();
     if (resp.status === 200) {
@@ -18,6 +20,7 @@ export default {
           for (let j = 0; j < cities.length; j++) {
             cities[j].id = areaData[i].id * 100 + j + 1;
             cities[j].name = cities[j].cityName;
+            cities[j].value = cities[j].confirmedCount;
           }
         } else {
           // areaData[i].hasChildren = false;
@@ -31,6 +34,5 @@ export default {
       console.log("更新数据失败！");
       return 0;
     }
-
   }
 };
