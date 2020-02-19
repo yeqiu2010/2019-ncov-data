@@ -86,7 +86,6 @@
       // 获取当前位置,位置获取成功后初始化省级疫情地图
       this.getLocationAndInitProvinceMap();
 
-
       // 在屏幕旋转时能自动调整尺寸
       let _this = this;
       window.onresize = function () {
@@ -367,21 +366,6 @@
               {value: 0, label: '0', color: '#fff'}
             ]
           },
-          // geo: { // 地理坐标系组件用于地图的绘制
-          //   map: '湖北', // 表示中国地图
-          //   roam: false, // 是否开启鼠标缩放和平移漫游
-          //   zoom: 1.2, // 当前视角的缩放比例（地图的放大比例）
-          //   label: {
-          //     show: true
-          //   },
-          //   itemStyle: { // 地图区域的多边形 图形样式。
-          //     borderColor: 'rgba(0, 0, 0, 0.2)',
-          //     emphasis: { // 高亮状态下的多边形和标签样式
-          //       shadowBlur: 20,
-          //       shadowColor: 'rgba(0, 0, 0, 0.5)'
-          //     }
-          //   }
-          // },
           series: [
             {
               name: '', // 浮动框的标题（上面的formatter自定义了提示框数据，所以这里可不写）
