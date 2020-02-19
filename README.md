@@ -1,17 +1,20 @@
 # 2019-ncov-data
 
 > A Vue.js project for 2019 wuhan ncov
+1. 全国疫情地图的展示
+2. 依据定位对所在省级疫情地图进行展示
+3. 展示全国数据列表
 
 ## 项目效果图
 
 ![home](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/home.png)
-
 ​												主页图片
-
 ![home1](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/home1.jpg)
-
 ​												主页图片1
-
+![phone](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/phone.jpg)
+​												手机主页
+![phone1](https://github.com/yeqiu2010/2019-ncov-data/blob/master/static/img/phone1.jpg)
+​												手机主页1
 ## 前端技术栈
 
 前端主要采用了：
